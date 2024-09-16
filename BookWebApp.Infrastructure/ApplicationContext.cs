@@ -1,9 +1,10 @@
 ﻿using BookWebApp.Core.Domain;
+using BookWebApp.Infrastructure.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookWebApp.Infrastructure
 {
-    internal class ApplicationContext : DbContext
+    public class ApplicationContext : DbContext
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
@@ -18,7 +19,10 @@ namespace BookWebApp.Infrastructure
         {
             base.OnModelCreating(modelBuilder);
 
-
+            modelBuilder.ApplyConfiguration(new BookConfiguration());
+            modelBuilder.ApplyConfiguration(new ConfirmationConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new LibrarianConfiguration());
         }
     }
 }

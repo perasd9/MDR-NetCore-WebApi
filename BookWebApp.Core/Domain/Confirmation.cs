@@ -11,5 +11,6 @@
         public User? User { get; set; }
         public Guid LibrarianId { get; set; }
         public Librarian? Lihrarian { get; set; }
+        public IEnumerable<Book>? Books { get; set; }
     }
 }

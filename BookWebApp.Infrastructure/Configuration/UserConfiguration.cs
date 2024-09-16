@@ -10,7 +10,9 @@ namespace BookWebApp.Infrastructure.Configuration
         {
             builder.HasKey(u => u.UserID);
 
-            builder.Property(u => u.UserID);
+            builder.Property(u => u.UserID).ValueGeneratedOnAdd();
+
+            builder.HasMany(u => u.Confirmations);
         }
     }
 }
