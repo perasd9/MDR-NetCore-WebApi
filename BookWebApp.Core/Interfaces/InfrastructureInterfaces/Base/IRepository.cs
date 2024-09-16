@@ -1,0 +1,13 @@
+﻿using System.Linq.Expressions;
+
+namespace BookWebApp.Core.Interfaces.InfrastructureInterfaces.Base
+{
+    public interface IRepository<TEntity> where TEntity : class
+    {
+        public IQueryable<TEntity> GetAll();
+        public IQueryable<TEntity> GetBySearch(Expression<Func<TEntity, bool>> expression);
+        public Task Save(TEntity entity);
+        public void Update(TEntity entity);
+        public void Delete(TEntity entity);
+    }
+}
