@@ -10,7 +10,7 @@
         public Guid UserId { get; set; }
         public User? User { get; set; }
         public Guid LibrarianId { get; set; }
-        public Librarian? Lihrarian { get; set; }
-        public IEnumerable<Book>? Books { get; set; }
+        public Librarian? Librarian { get; set; }
+        public Book? Book { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace BookWebApp.Infrastructure.Configuration
 
             builder.HasOne(c => c.User).WithMany(u => u.Confirmations);
             builder.HasOne(c => c.Librarian).WithMany(u => u.Confirmations);
-            builder.HasMany(c => c.Books).WithOne(b => b.Confirmation);
+            builder.HasOne(c => c.Book).WithMany(b => b.Confirmations);
         }
     }
 }

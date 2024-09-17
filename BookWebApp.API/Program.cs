@@ -1,4 +1,10 @@
 
+using BookWebApp.Core.Interfaces.InfrastructureInterfaces.UnitOfWork;
+using BookWebApp.Infrastructure;
+using BookWebApp.Infrastructure.Repositories.UnitOfWork;
+using BookWebApp.Presentation.GraphQL.GraphQLQueries;
+using Microsoft.EntityFrameworkCore;
+
 namespace BookWebApp.API
 {
     public class Program
@@ -14,6 +20,18 @@ namespace BookWebApp.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddDbContextFactory<ApplicationContext>(opt =>
+            {
+                opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConn"), b => b.MigrationsAssembly("BookWebApp.Infrastructure"));
+            });
+
+            builder.Services.AddMediatR(opt => opt.RegisterServicesFromAssembly(typeof(Application.Startup).Assembly));
+
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            builder.Services.AddGraphQLServer()
+                .AddQueryType<Query>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -27,6 +45,7 @@ namespace BookWebApp.API
 
             app.UseAuthorization();
 
+            app.MapGraphQL();
 
             app.MapControllers();
 

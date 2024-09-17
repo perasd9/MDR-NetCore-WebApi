@@ -12,7 +12,7 @@ namespace BookWebApp.Infrastructure.Configuration
 
             builder.Property(b => b.BookId).ValueGeneratedOnAdd();
 
-            builder.HasOne(b => b.Confirmation).WithMany(c => c.Books);
+            builder.HasMany(b => b.Confirmations).WithOne(c => c.Book);
 
             builder.Property(b => b.BookType).HasConversion<string>().HasColumnType("nvarchar(255)");
 

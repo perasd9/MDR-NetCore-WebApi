@@ -13,10 +13,7 @@ namespace BookWebApp.Infrastructure.Repositories.Base
         }
 
 
-        public IQueryable<TEntity> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+        public IQueryable<TEntity> GetAll() => _context.Set<TEntity>();
 
         public IQueryable<TEntity> GetBySearch(Expression<Func<TEntity, bool>> expression)
         {

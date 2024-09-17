@@ -8,7 +8,6 @@
         public TypeOfBook BookType { get; set; }
         public int NumberOfCopies { get; set; }
         public string? Author { get; set; }
-        public Guid ConfirmationId { get; set; }
-        public Confirmation? Confirmation { get; set; }
+        public IEnumerable<Confirmation>? Confirmations { get; set; }
     }
 }

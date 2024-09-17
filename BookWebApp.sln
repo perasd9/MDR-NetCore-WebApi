@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookWebApp.Application", "B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookWebApp.Infrastructure", "BookWebApp.Infrastructure\BookWebApp.Infrastructure.csproj", "{FE24C14B-2321-45CE-83F2-F8BED26963D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookWebApp.Presentation", "BookWebApp.Presentation\BookWebApp.Presentation.csproj", "{CCD80405-0EC2-4BA0-A9D0-1E44DE1AB9B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FE24C14B-2321-45CE-83F2-F8BED26963D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE24C14B-2321-45CE-83F2-F8BED26963D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE24C14B-2321-45CE-83F2-F8BED26963D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCD80405-0EC2-4BA0-A9D0-1E44DE1AB9B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD80405-0EC2-4BA0-A9D0-1E44DE1AB9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD80405-0EC2-4BA0-A9D0-1E44DE1AB9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD80405-0EC2-4BA0-A9D0-1E44DE1AB9B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
