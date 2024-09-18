@@ -2,6 +2,7 @@
 using BookWebApp.Core.Interfaces.InfrastructureInterfaces.UnitOfWork;
 using BookWebApp.Infrastructure;
 using BookWebApp.Infrastructure.Repositories.UnitOfWork;
+using BookWebApp.Presentation.GraphQL.GraphQLMutations;
 using BookWebApp.Presentation.GraphQL.GraphQLQueries;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,7 +31,8 @@ namespace BookWebApp.API
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             builder.Services.AddGraphQLServer()
-                .AddQueryType<Query>();
+                .AddQueryType<Query>()
+                .AddMutationType<Mutation>();
 
             var app = builder.Build();
 

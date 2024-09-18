@@ -20,10 +20,7 @@ namespace BookWebApp.Infrastructure.Repositories.Base
             throw new NotImplementedException();
         }
 
-        public Task Save(TEntity entity)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task Save(TEntity entity) => await _context.AddAsync(entity);
 
         public void Update(TEntity entity)
         {
