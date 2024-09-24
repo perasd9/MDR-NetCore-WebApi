@@ -5,7 +5,7 @@ including API, Application, Core, Infrastructure, and Presentation.
 
 ## Features
 * GraphQL API: Built using HotChocolate for defining and executing GraphQL queries.
-* MediatR: Implements CQRS pattern for handling requests and commands.
+* MediatR: Implements CQRS pattern for handling queries and commands.
 * Modular Architecture: Clear separation of concerns across layers.
 
 ## Project Structure
@@ -36,7 +36,7 @@ GraphQL Endpoints
 Access the GraphQL playground at /graphql and explore queries like fetching books or managing records.
 Example Query
 ```bash
-{
+query{
   books {
     id
     title
